@@ -51,6 +51,7 @@ public class MemberInitActivity extends AppCompatActivity {
         String phoneNumber=((EditText)findViewById(R.id.phoneNumberEditText)).getText().toString();
         String birthDay=((EditText)findViewById(R.id.birthDayEditText)).getText().toString();
         String address=((EditText)findViewById(R.id.addressEditText)).getText().toString();
+<<<<<<< HEAD
         String height=((EditText)findViewById(R.id.heightEditText)).getText().toString();
         String weight=((EditText)findViewById(R.id.weightEditText)).getText().toString();
         String fever=((EditText)findViewById(R.id.feverEditText)).getText().toString();
@@ -63,6 +64,16 @@ public class MemberInitActivity extends AppCompatActivity {
 
             if(user != null){
                 db.collection("users").document(user.getUid()).set(memberInfo)
+=======
+
+        if(name.length()>0 && phoneNumber.length()>9 && birthDay.length()>5 && address.length()>0){
+            FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
+            FirebaseFirestore db = FirebaseFirestore.getInstance();
+            MemberInfo memberInfo = new MemberInfo(name, phoneNumber, birthDay, address);
+
+            if(user != null){
+                db.collection("users").document(name).set(memberInfo)
+>>>>>>> ac0aad1786204800e06b2c3a8446ffce83e8d66a
                         .addOnSuccessListener(new OnSuccessListener<Void>() {
                             @Override
                             public void onSuccess(Void aVoid) {
@@ -87,4 +98,9 @@ public class MemberInitActivity extends AppCompatActivity {
         Toast.makeText(this,msg,Toast.LENGTH_SHORT).show();
     }
 
+<<<<<<< HEAD
+=======
+
+
+>>>>>>> ac0aad1786204800e06b2c3a8446ffce83e8d66a
 }

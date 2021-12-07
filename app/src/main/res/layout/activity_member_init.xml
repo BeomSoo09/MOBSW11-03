@@ -2,13 +2,21 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+<<<<<<< HEAD
     android:orientation="vertical"
     android:background="@drawable/loginbackground">
+=======
+    android:orientation="vertical">
+>>>>>>> ac0aad1786204800e06b2c3a8446ffce83e8d66a
 
     <TextView
         android:id="@+id/textView"
         android:layout_width="match_parent"
+<<<<<<< HEAD
         android:layout_height="100dp"
+=======
+        android:layout_height="200dp"
+>>>>>>> ac0aad1786204800e06b2c3a8446ffce83e8d66a
         android:gravity="center"
         android:text="회원정보"
         android:textColor="@color/black"
@@ -34,7 +42,11 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:ems="10"
+<<<<<<< HEAD
             android:hint="전화번호 ex) 01022225555"
+=======
+            android:hint="전화번호"
+>>>>>>> ac0aad1786204800e06b2c3a8446ffce83e8d66a
             android:inputType="phone" />
 
         <EditText
@@ -42,7 +54,11 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:ems="10"
+<<<<<<< HEAD
             android:hint="생년월일 ex) 19970808"
+=======
+            android:hint="생년월일"
+>>>>>>> ac0aad1786204800e06b2c3a8446ffce83e8d66a
             android:inputType="date" />
 
         <EditText
@@ -53,6 +69,7 @@
             android:hint="주소"
             android:inputType="textPostalAddress" />
 
+<<<<<<< HEAD
         <EditText
             android:id="@+id/heightEditText"
             android:layout_width="match_parent"
@@ -101,6 +118,8 @@
             android:hint="ex) Y/N"
             android:inputType="textPersonName" />
 
+=======
+>>>>>>> ac0aad1786204800e06b2c3a8446ffce83e8d66a
         <Button
             android:id="@+id/checkButton"
             android:layout_width="match_parent"
