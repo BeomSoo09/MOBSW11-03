@@ -7,6 +7,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.widget.Button;
 
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
@@ -19,6 +20,8 @@ import com.google.firebase.firestore.FirebaseFirestore;
 public class MainActivity extends AppCompatActivity {
     private static final String TAG = "MainActivity";
 
+    private Button memberfixButton;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -27,6 +30,7 @@ public class MainActivity extends AppCompatActivity {
         FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
 
         if(user == null){
+            // 회원정보가 없을 경우 회원정보수정 화면으로 이동
             myStartActivity(SignUpActivity.class);
         }else{
             FirebaseFirestore db = FirebaseFirestore.getInstance();
@@ -51,7 +55,19 @@ public class MainActivity extends AppCompatActivity {
             });
         }
         findViewById(R.id.logoutButton).setOnClickListener(onClickListener);
+
+        // 회원정보수정 버튼 연결
+        memberfixButton = findViewById(R.id.memberfixButton);
+        memberfixButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this, MemberInitActivity.class);
+                startActivity(intent); // 회원정보수정 액티비티로 이동
+            }
+        });
     }
+
+
 
     View.OnClickListener onClickListener = new View.OnClickListener() {
         @Override
