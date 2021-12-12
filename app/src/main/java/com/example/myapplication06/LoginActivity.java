@@ -52,11 +52,13 @@ public class LoginActivity extends AppCompatActivity {
                     .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
                         @Override
                         public void onComplete(@NonNull Task<AuthResult> task) {
+                            // 로그인이 성공했을 때
                             if (task.isSuccessful()) {
                                 FirebaseUser user = mAuth.getCurrentUser();
                                 startToast("로그인에 성공했습니다.");
+                                // 로그인에 성공하면 MainActivity로 이동
                                 myStartActivity(MainActivity.class);
-                                //UI
+                            // 로그인이 실패했을 때
                             } else {
                                 if(task.getException() != null){
                                     startToast(task.getException().toString());
@@ -74,6 +76,7 @@ public class LoginActivity extends AppCompatActivity {
 
     private void myStartActivity(Class c){
         Intent intent = new Intent(this,c);
+        // FLAG_ACTIVITY_CLEAR_TOP을 사용해서 메인화면에서 뒤로가기 눌렀을 시 앱 꺼짐
         intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
         startActivity(intent);
     }

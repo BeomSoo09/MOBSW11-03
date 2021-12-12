@@ -7,10 +7,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
-<<<<<<< HEAD
 import android.widget.Button;
-=======
->>>>>>> ac0aad1786204800e06b2c3a8446ffce83e8d66a
 
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
@@ -22,11 +19,8 @@ import com.google.firebase.firestore.FirebaseFirestore;
 
 public class MainActivity extends AppCompatActivity {
     private static final String TAG = "MainActivity";
-<<<<<<< HEAD
 
     private Button memberfixButton;
-=======
->>>>>>> ac0aad1786204800e06b2c3a8446ffce83e8d66a
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -36,14 +30,11 @@ public class MainActivity extends AppCompatActivity {
         FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
 
         if(user == null){
-<<<<<<< HEAD
-            // 회원정보가 없을 경우 회원정보수정 화면으로 이동
-=======
->>>>>>> ac0aad1786204800e06b2c3a8446ffce83e8d66a
             myStartActivity(SignUpActivity.class);
         }else{
             FirebaseFirestore db = FirebaseFirestore.getInstance();
             DocumentReference docRef = db.collection("users").document(user.getUid());
+            // get()을 이용한 문서검색 로직
             docRef.get().addOnCompleteListener(new OnCompleteListener<DocumentSnapshot>() {
                 @Override
                 public void onComplete(@NonNull Task<DocumentSnapshot> task) {
@@ -54,6 +45,7 @@ public class MainActivity extends AppCompatActivity {
                                 Log.d(TAG, "DocumentSnapshot data: " + document.getData());
                             } else {
                                 Log.d(TAG, "No such document");
+                                // Log.d로 프로필 정보 확인 후 값이 없으면 회원정보입력 화면으로 이동
                                 myStartActivity(MemberInitActivity.class);
                             }
                         }
@@ -64,7 +56,6 @@ public class MainActivity extends AppCompatActivity {
             });
         }
         findViewById(R.id.logoutButton).setOnClickListener(onClickListener);
-<<<<<<< HEAD
 
         // 회원정보수정 버튼 연결
         memberfixButton = findViewById(R.id.memberfixButton);
@@ -77,12 +68,7 @@ public class MainActivity extends AppCompatActivity {
         });
     }
 
-
-
-=======
-    }
-
->>>>>>> ac0aad1786204800e06b2c3a8446ffce83e8d66a
+    // 로그아웃 버튼을 눌렀을 시 회원가입 화면으로 이동
     View.OnClickListener onClickListener = new View.OnClickListener() {
         @Override
         public void onClick(View v) {

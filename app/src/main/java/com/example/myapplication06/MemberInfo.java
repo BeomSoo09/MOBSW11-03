@@ -8,28 +8,20 @@ public class MemberInfo {
     private String phoneNumber;
     private String birthDay;
     private String address;
-<<<<<<< HEAD
     private String height;
     private String weight;
     private String fever;
     private String medicine;
 
     public MemberInfo(String name,String phoneNumber,String birthDay,String address,String height,String weight,String fever, String medicine){
-=======
-
-    public MemberInfo(String name,String phoneNumber,String birthDay,String address){
->>>>>>> ac0aad1786204800e06b2c3a8446ffce83e8d66a
         this.name=name;
         this.phoneNumber=phoneNumber;
         this.birthDay=birthDay;
         this.address=address;
-<<<<<<< HEAD
         this.height=height;
         this.weight=weight;
         this.fever=fever;
         this.medicine=medicine;
-=======
->>>>>>> ac0aad1786204800e06b2c3a8446ffce83e8d66a
     }
     public String getName(){
         return this.name;
@@ -58,7 +50,6 @@ public class MemberInfo {
     public void setAddress(String address){
         this.address=address;
     }
-<<<<<<< HEAD
 
     public String getHeight(){
         return this.height;
@@ -87,6 +78,4 @@ public class MemberInfo {
     public void setMedicine(String medicine){
         this.medicine=medicine;
     }
-=======
->>>>>>> ac0aad1786204800e06b2c3a8446ffce83e8d66a
 }
